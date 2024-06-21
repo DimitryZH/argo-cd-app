@@ -1,3 +1,6 @@
+# This YAML file defines an Argo CD Application resource.
+# It specifies the configuration for deploying an application using Argo CD.
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -6,15 +9,25 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
+  # Specifies the destination cluster where the application will be deployed.
   destination:
     name: in-cluster
     namespace: argocd
+
+  # Specifies the source code repository and path for the application.
   source:
     path: "demo-dev/applications"
     repoURL: "git@github.com:DimitryZH/argo-cd-app.git"
     targetRevision: HEAD
+
+  # Specifies the project that the application belongs to.
   project: default
+
+  # Specifies the sync policy for the application.
   syncPolicy:
     automated:
+      # Enables pruning of resources that are no longer defined in the source repository.
       prune: true
+
+      # Enables self-healing of resources that have been modified outside of Argo CD.
       selfHeal: true

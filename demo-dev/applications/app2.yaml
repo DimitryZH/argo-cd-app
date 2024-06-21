@@ -1,3 +1,12 @@
+# This YAML file defines an Argo CD Application resource for deploying an application named "myapp2" in the "argocd" namespace.
+# The application is sourced from a Helm chart located at "HelmCharts/MyChart2" in the Git repository "git@github.com:DimitryZH/argo-cd-app.git".
+# The target revision is set to "HEAD" of the repository.
+# The application is deployed to the "app2" namespace in the cluster.
+# The Helm chart is customized using the values file "values_dev.yaml" and the parameter "container.image" is set to "dmitryzhuravlev/testapp:v1".
+# The application is part of the "default" project in Argo CD.
+# The sync policy is set to automated, which enables pruning of resources and self-healing.
+# Additionally, the "CreateNamespace" sync option is enabled.
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:

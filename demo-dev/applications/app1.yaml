@@ -1,3 +1,6 @@
+# This YAML file defines an Argo CD Application resource, which represents an application managed by Argo CD.
+# It specifies the desired state of the application, including the source code repository, target revision, and deployment configuration.
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -6,13 +9,18 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
+  # The destination section specifies the target cluster and namespace where the application will be deployed.
   destination:
     name: in-cluster
     namespace: app1
+
+  # The source section specifies the source code repository and revision to use for the application.
   source:
     path: "HelmCharts/MyChart1"
     repoURL: "git@github.com:DimitryZH/argo-cd-app.git"
     targetRevision: HEAD
+
+    # The helm section specifies the Helm chart values and parameters to use for the application deployment.
     helm:
       valueFiles:
         - values_dev.yaml
@@ -20,7 +28,10 @@ spec:
         - name: "container.image"
           value: dmitryzhuravlev/testapp:v1
 
+  # The project field specifies the Argo CD project that this application belongs to.
   project: default
+
+  # The syncPolicy section specifies the synchronization behavior for the application.
   syncPolicy:
     automated:
       prune: true
