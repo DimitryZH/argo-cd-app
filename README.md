@@ -20,7 +20,7 @@ Before deploying this project, ensure the following prerequisites are met:
 
 1. **AWS EKS Deployed**: An Amazon EKS cluster must be deployed and operational. For guidance on setting up an EKS cluster, refer to the project ["AWS EKS Clusters Configuration"](https://github.com/DimitryZH/eks-clusters).
 2. **ArgoCD Deployed in EKS**: ArgoCD must be installed and configured within your EKS cluster to manage application deployments. For instructions on deploying ArgoCD on EKS using Terraform, see the project ["ArgoCD Deployment on Amazon EKS with Terraform"](https://github.com/DimitryZH/argo-cd-app-terraform/tree/main).
-
+3. **Choose Container Application**: For this project, a Dockerized application is used. You can find the source code on GitHub at ["Dockerized TestApp"](https://github.com/DimitryZH/docker-testapp) and the container image on DockerHub at [Dockerized PHP web application](https://hub.docker.com/r/dmitryzhuravlev/testapp)
 ## Implementation
 
 To leverage the power of automation provided by ArgoCD, follow these steps:
@@ -34,17 +34,15 @@ This approach minimizes manual intervention and leverages ArgoCD's capabilities 
 ## Results
 
 ### Root Application Management
+![Root Application Management](https://github.com/DimitryZH/argo-cd-app/assets/146372946/7e5eebed-106f-43f5-b4a3-191cbfb40298)
 
-![Root Application Management]()
 
 ### Development Environment Deployment
-
-![Development Environment Deployment]()
+![Development Environment Deployment](https://github.com/DimitryZH/argo-cd-app/assets/146372946/d1b1c863-da16-43f3-8b4d-004d21aa2230)
 
 ### Production Environment Deployment
+![Production Environment Deployment](https://github.com/DimitryZH/argo-cd-app/assets/146372946/1607da94-cb19-478d-8408-6f434cefe5e3)
 
-![Production Environment Deployment]()
+### Container Application Running in Development and Production Environments
+![Running Container Application](https://github.com/DimitryZH/argo-cd-app/assets/146372946/9bd67ec9-8991-4e05-ad23-a06a6f9be74e)
 
-### Application Running in Development Environment
-
-![Running Container Application in Development Environment]()
