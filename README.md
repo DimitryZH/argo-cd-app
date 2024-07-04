@@ -2,17 +2,28 @@
 
 This project showcases the use of a root Argo CD Application to manage and orchestrate the deployment of two other Argo CD applications, `myapp1` and `myapp2`. The root application approach enables a hierarchical management structure, simplifying the governance of multiple applications across different environments (development and production) within a Kubernetes cluster. The project utilizes a customizable Helm Chart, allowing for easy adaptation of the applications with support for custom container images and replica counts.
 
+## Technologies:
+
+[![GitHub Badge](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](#)
+[![Git Badge](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](#)
+[![Docker Badge](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](#)
+[![Kubernetes Badge](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](#)
+[![Helm Badge](https://img.shields.io/badge/Helm-0F1689?style=for-the-badge&logo=helm&logoColor=white)](#)
+[![ArgoCD Badge](https://img.shields.io/badge/ArgoCD-24B4E6?style=for-the-badge&logo=argo&logoColor=white)](#)
+[![Terraform Badge](https://img.shields.io/badge/Terraform-623CE4?style=for-the-badge&logo=terraform&logoColor=white)](#)
+[![AWS Badge](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](#)
+[![Linux Badge](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](#)
+[![PHP Badge](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](#)
+
 ## Project Structure
 
 - **Argo CD Application Definitions**: YAML files defining Argo CD Application resources for both development and production environments. These files specify the source repository, target revision, deployment destination, and synchronization policies.
 - **Helm Charts**: Contains the Helm chart for deploying the applications. The chart includes templates for Kubernetes `Deployment` and `Service` resources, configured to deploy a web application.
 - **Values Files**: Separate values files for development (`values_dev.yaml`) and production (`values_prod.yaml`) environments, allowing for environment-specific configurations such as the number of replicas and the container image.
 
-## Architecture Overview
+## Architecture Diagram
 
-Below is a diagram illustrating the Argo CD Root Application Manager Overview:
-
-![argo_cd_root_application_manager_overview](https://github.com/DimitryZH/argo-cd-app/assets/146372946/09460b32-76f2-4e6c-85b8-508b3a783e49)
+![argo_cd_root_application](https://github.com/DimitryZH/argo-cd-app/assets/146372946/b9244943-b75e-41dd-9a2a-b60f85db9365)
 
 ## Key Features
 
