@@ -8,6 +8,12 @@ This project showcases the use of a root Argo CD Application to manage and orche
 - **Helm Charts**: Contains the Helm chart for deploying the applications. The chart includes templates for Kubernetes `Deployment` and `Service` resources, configured to deploy a web application.
 - **Values Files**: Separate values files for development (`values_dev.yaml`) and production (`values_prod.yaml`) environments, allowing for environment-specific configurations such as the number of replicas and the container image.
 
+## Architecture Overview
+
+Below is a diagram illustrating the Argo CD Root Application Manager Overview:
+
+![argo_cd_root_application_manager_overview](https://github.com/DimitryZH/argo-cd-app/assets/146372946/09460b32-76f2-4e6c-85b8-508b3a783e49)
+
 ## Key Features
 
 - **Multi-Environment Deployment**: Supports separate configurations for development and production environments, facilitating easy promotion of changes.
